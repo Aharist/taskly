@@ -13,6 +13,13 @@ app.use(express.json());
 app.use("/api/v1/users", userRouter);
 
 
+app.use("/",(req, res)=>{
+    res.status(200).json({
+        message: "Welcome",
+    });
+});
+
+
 app.use("*",(req, res)=>{
     res.status(404).json({
         message: "not found",
