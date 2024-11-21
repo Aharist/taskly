@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 import {
-    FormControl,
+    //FormControl,
     Input,
     Button,
     Text,
@@ -10,8 +10,13 @@ import {
     Flex,
     Heading,
     Stack,
-    FormErrorMessage,
+    //FormErrorMessage,
 } from '@chakra-ui/react';
+
+import {
+    FormControl,
+    FormErrorMessage,
+} from "@chakra-ui/form-control"
 
 export default function SignUp() {
     const {
