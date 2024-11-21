@@ -24,7 +24,7 @@ export default function SignUp() {
         alert('Sign Up Successful. You are now logged in');
     };
 
-    return (
+        return (
         <Box p="3" maxW="lg" mx="auto">
             <Heading
                 as="h1"
@@ -36,6 +36,7 @@ export default function SignUp() {
                 Create an Account
             </Heading>
             <form onSubmit={handleSubmit(doSubmit)}>
+                {/*form details...*/}
                 <Stack gap="4">
                     <FormControl isInvalid={errors.username}>
                         <Input
