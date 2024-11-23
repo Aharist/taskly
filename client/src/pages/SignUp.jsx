@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 import {
     //FormControl,
@@ -26,7 +27,7 @@ export default function SignUp() {
     } = useForm();
 
     const doSubmit = async (values) => {
-        alert('Sign Up Successful. You are now logged in');
+        toast.success('Sign Up Successful. You are now logged in');
     };
 
         return (
