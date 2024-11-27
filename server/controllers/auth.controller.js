@@ -2,11 +2,11 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { db } from '../configs/db.js';
 
-const collection = await db.collection('users');
+const collection = db.collection('users');
 
 export const signup = async (req, res, next) => {
     try {
-        const { name, email, password } = req.body;
+        const { username, email, password } = req.body;
         const query = {
             $or: [{ email }, { username }],
         };

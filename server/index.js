@@ -21,17 +21,17 @@ app.use(
 
 //api
 app.use("/api/v1/users", userRouter);
-app.use('api/v1/auth', authRouter);
+app.use("/api/v1/auth", authRouter);
 
 
-app.use("/",(req, res)=>{
+app.use("/", (req, res) => {
     res.status(200).json({
         message: "Welcome",
     });
 });
 
 
-app.use("*",(req, res)=>{
+app.use("*", (req, res) => {
     res.status(404).json({
         message: "not found",
     });
