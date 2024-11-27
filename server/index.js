@@ -4,6 +4,7 @@ import userRouter from "./routes/user.route.js";
 import { errorHandler } from './configs/midleware.js';
 import authRouter from "./routes/auth.route.js";
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 const app = express();//library express initialized
 const PORT = process.env.PORT;
@@ -11,6 +12,12 @@ const PORT = process.env.PORT;
 //json middleware
 app.use(express.json());
 app.use(cookieParser());
+app.use(
+    cors({
+        origin: process.env.CLIENT_URL,
+        credentials: true,
+    })
+);
 
 //api
 app.use("/api/v1/users", userRouter);
