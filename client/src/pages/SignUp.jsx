@@ -39,8 +39,6 @@ export default function SignUp() {
             const data = await res.json();
             if (res.status === 200) {
                 toast.success('Sign Up Successful. You are now logged in');
-                updateUser(data);
-                navigate('/profile');
             } else {
                 toast.error(data.message);
             }
