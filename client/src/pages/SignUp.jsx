@@ -27,7 +27,7 @@ export default function SignUp() {
         formState: { errors, isSubmitting },
     } = useForm();
 
-    const doSubmit = async (values) => {
+    const doSubmit = async values => {
         try {
             const res = await fetch(`${API_BASE_URL}/auth/signup`, {
                 method: 'POST',
@@ -38,7 +38,9 @@ export default function SignUp() {
             });
             const data = await res.json();
             if (res.status === 200) {
-                toast.success('Sign up successful. You are now logged in');
+                toast.success('Sign Up Successful. You are now logged in');
+                updateUser(data);
+                navigate('/profile');
             } else {
                 toast.error(data.message);
             }
