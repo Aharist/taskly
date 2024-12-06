@@ -6,7 +6,7 @@ import authRouter from "./routes/auth.route.js";
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
-const app = express();//library express initialized
+const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
@@ -23,7 +23,7 @@ app.use("/api/v1/auth", authRouter);
 
 app.use("/", (req, res) => {
     res.status(200).json({
-        message: "Welcome",
+        message: "Hello World!",
     });
 });
 app.use("*", (req, res) => {
